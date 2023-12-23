@@ -7,8 +7,17 @@
     <title>Document</title>
     <script src="https://kit.fontawesome.com/5c4aca786f.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/trangchu.css">
+    <script>
+    function submitForm(formId) {
+        document.getElementById(formId).submit();
+    }
+</script>
 </head>
-
+<?php 
+    include("config.php");
+    $sql="SELECT * FROM loaisanpham;";
+    $kq=mysqli_query($conn,$sql) or die ("Không thể xuất thông tin ".mysqli_error());
+?>
 <body>
     <div class="top">
         <div class="khungvien">
@@ -21,9 +30,16 @@
                 <div class="dropdown">
                     <a href="tongsp.php" class="dropbtn">Sản phẩm</a>
                     <div class="dropdown-content">
-                    <a href="bohoa.php">Bó hoa</a>
-                    <a href="giohoa.php">Giỏ hoa</a>
-                        <a href="hoale.php">Hoa lẻ</a>
+                    <?php 
+                    
+                         while($row=mysqli_fetch_array($kq))
+                         {  
+                            echo "<form action='tongsp.php' id='myForm" . $row["maloai"] . "' method='post'>";
+                            echo "<input type='hidden' name='loaiid' value='" . $row["maloai"] . "'>
+                                    <a onclick='submitForm(\"myForm" . $row["maloai"] . "\")'>" . $row["tenloai"] . "</a>
+                                    </form>";
+                        }
+                    ?>
         
                     </div>
                 </div>

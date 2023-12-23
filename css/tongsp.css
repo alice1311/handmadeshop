@@ -52,6 +52,7 @@ img:hover {
 .khungchu>h2 {
     font-size: 18px;
     color: #11998e;
+    
 
 }
 
@@ -119,6 +120,11 @@ img:hover {
     font-size: 18px;
     color: #11998e;
     
+}
+.tde>h2{
+    .uppercase-text {
+        text-transform: uppercase;
+    }
 }
 
 .xemtatca {
