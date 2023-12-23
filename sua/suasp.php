@@ -3,38 +3,37 @@ include("before.php");
 ?>
 
 <head>
-    <link rel="stylesheet" href="admin.css" />
+    <link rel="stylesheet" href="css/admin.css" />
 </head>
 
 <style>
 .tabledh {
     margin-top: 30px;
-    gap: 40px;
+    gap: 25px;
     height: 280px;
     background-color: #F3F3F3;
     display: flex;
+    flex-direction: column;
     align-items: center;
     font-size: 15px;
     justify-content: center;
 }
-.suama1 , .suama2{
+.suama1, .suama2, .suama3{
     display: flex;
-    flex-direction: column;
-    gap: 30px;
+    gap: 60px;
 }
-.boxsua , .boxsua1{
+.boxsua, .boxsua1, .boxsua2{
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-.boxsua > input , .boxsua1 > input{
-
+.boxsua > input, .boxsua1>input , .boxsua2>input{
     height: 30px;
-    width: 250px;
+    width: 230px;
     border-radius: none;
     border: 1px solid black;
 }
-.boxsua > span , .boxsua1 > span{
+.boxsua > span , .boxsua1 > span , .boxsua2>span{
     font-weight: 600;
 }
 </style>
@@ -108,35 +107,53 @@ include("before.php");
 
     <div class="frright">
         <div class="texttd">
-            <label>Sửa thông tin khuyến mãi</label>
+            <label>Sửa thông tin sản phẩm</label>
         </div>
     
 
         <div class="tabledh">
             <div class="suama1">
                 <div class="boxsua">
-                    <span>Mã khuyến mãi</span>
+                    <span>Mã sản phẩm</span>
                     <input type="text" readonly />
                 </div>
 
                 <div class="boxsua">
-                    <span>Phần trăm khuyến mãi</span>
+                    <span>Mã loại sản phẩm</span>
                     <input type="text"  />
                 </div>
+
+                <div class="boxsua">
+                    <span>Tên sản phẩm</span>
+                    <input type="text" />
+                </div>
+
+
             </div>
 
             <div class="suama2">
                 <div class="boxsua1">
-                    <span>Ngày bắt đầu</span>
-                    <input type="date"/>
+                    <span>Mô tả sản phẩm</span>
+                    <input type="text"/>
                 </div>
 
                 <div class="boxsua1">
-                    <span>Ngày kết thúc</span>
-                    <input type="date" />
+                    <span>Hình ảnh</span>
+                    <input type="file" />
                 </div>
             </div>
 
+            <div class="suama3">
+                <div class="boxsua2">
+                    <span>Giá bán</span>
+                    <input type="text"/>
+                </div>
+
+                <div class="boxsua2">
+                    <span>Tồn kho</span>
+                    <input type="text"/>
+                </div>
+            </div>
 
         </div>
 
@@ -147,12 +164,12 @@ include("before.php");
     </div>
 
 </div>
+
 <style>
-    .thongtinacc > :nth-child(6){
+    .thongtinacc > :nth-child(3){
     color:#19989e;
     }
 </style>
-
 
 <?php
 include("after.php");

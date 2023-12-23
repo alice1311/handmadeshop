@@ -1,10 +1,55 @@
 <?php
-include("before.php")
+include("before.php");
 ?>
 
 <head>
-    <link rel="stylesheet" a href="quanly.css" />
+    <link rel="stylesheet" href="css/admin.css" />
 </head>
+
+<style>
+.tabledh {
+    margin-top: 30px;
+    gap: 25px;
+    height: 280px;
+    background-color: #F3F3F3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 15px;
+    justify-content: center;
+}
+
+.suama1,
+.suama2,
+.suama3 {
+    display: flex;
+    gap: 60px;
+}
+
+.boxsua,
+.boxsua1,
+.boxsua2 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.boxsua>input,
+.boxsua1>input,
+.boxsua2>input {
+    height: 30px;
+    width: 230px;
+    border-radius: none;
+    border: 1px solid black;
+}
+
+.boxsua>span,
+.boxsua1>span,
+.boxsua2>span {
+    font-weight: 600;
+}
+</style>
+
 
 <div class="backgr">
 
@@ -74,42 +119,56 @@ include("before.php")
 
     <div class="frright">
         <div class="texttd">
-            <label>Thông tin chi tiết đơn hàng</label>
-        </div>
-        <div class="btnxoa">
-            <button>Xóa tất cả</button>
+            <label>Sửa thông tin hồ sơ</label>
+            <span>Quản lý thông tin hồ sơ để bảo mật tài khoản</span>
         </div>
 
-        <div class="tths">
-            <table>
-                <tr>
-                    <th>Mã sản phẩm</th>
-                    <th>Mã đơn hàng</th>
-                    <th>Số lượng</th>
-                    <th>Giá</th>
-                    <th>Tổng tiền</th>
+
+        <div class="tabledh">
+            <div class="suama">
+             <div class="boxsua">
+                <span>Tên đăng nhập</span>
+                <input type="text" readonly />
+            </div>
+             </div>
+        <div class="suama1">
+            <div class="boxsua">
+                <span>Họ và tên</span>
+                <input type="text" />
+            </div>
+
+            <div class="boxsua">
+                <span>Số điện thoại</span>
+                <input type="text" />
+            </div>
 
 
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><a href="suachitietdon.php">Thay đổi</a></td>
-                </tr>
-            </table>
         </div>
-        <!-- <div class="btn"><button>Lưu hồ sơ</button></div> -->
+
+        <div class="suama2">
+            <div class="boxsua1">
+                <span>Địa chỉ</span>
+                <input type="text" />
+            </div>
+
+            <div class="boxsua1">
+                <span>Email</span>
+                <input type="text" />
+            </div>
+        </div>
+
     </div>
+
+    <div class="btn"><button>Lưu thay đổi</button></div>
+
+
+
 </div>
-<style>
-.thongtinacc > :nth-child(3){
-    color:#19989e;
-}
-</style>
+
+</div>
+
+
 
 <?php
-include("after.php")
+include("after.php");
 ?>

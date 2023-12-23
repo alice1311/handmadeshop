@@ -2,8 +2,9 @@
 include("before.php")
 ?>
 
+
 <head>
-    <link rel="stylesheet" a href="quanly.css" />
+    <link rel="stylesheet" a href="css/quanly.css" />
 </head>
 <div class="backgr">
 
@@ -73,38 +74,27 @@ include("before.php")
 
     <div class="frright">
         <div class="texttd">
-            <label>Thông tin đơn hàng</label>
+            <label>Tài khoản quản trị viên</label>
         </div>
         <div class="btnxoa">
             <button>Xóa tất cả</button>
-        </div>
+</div>
 
         <div class="tths">
             <table>
                 <tr>
-                    <th>Mã đơn hàng</th>
-                    <th>Mã khách hàng</th>
-                    <th>Mã nhân viên</th>
-                    <th>Mã thanh toán</th>
-                    <th>Ngày tạo</th>
-                    <th>Tổng tiền</th>
-                    <th>Trạng thái</th>
-                    <th>Địa chỉ</th>
+                    <th>Tên đăng nhập</th>
+                    <th>Mật khẩu</th>
+                    
                 </tr>
                 <tr>
                    <td></td>
                    <td></td>
-                   <td></td>
-                   <td></td>
-                   <td></td>
-                   <td></td>
-                   <td></td>
-                   <td></td>
-                    <td><a href="suadonhang.php">Thay đổi</a></td>
+                 
+                    <td><a href="suataikhoan.php">Thay đổi</a></td>
                 </tr>
             </table>
         </div>
-        <!-- <div class="btn"><button>Lưu hồ sơ</button></div> -->
 
 
 
@@ -113,7 +103,7 @@ include("before.php")
 </div>
 
 <style>
-.thongtinacc > :nth-child(5){
+.thongtinacc > :nth-child(1){
     color:#19989e;
 }
 </style>

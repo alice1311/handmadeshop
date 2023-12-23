@@ -3,49 +3,38 @@ include("before.php");
 ?>
 
 <head>
-    <link rel="stylesheet" href="admin.css" />
+    <link rel="stylesheet" href="css/admin.css" />
 </head>
 
 <style>
 .tabledh {
     margin-top: 30px;
-    gap: 25px;
+    gap: 40px;
     height: 280px;
     background-color: #F3F3F3;
     display: flex;
-    flex-direction: column;
     align-items: center;
     font-size: 15px;
     justify-content: center;
 }
-
-.suama1,
-.suama2,
-.suama3 {
+.suama1 , .suama2{
     display: flex;
-    gap: 60px;
+    flex-direction: column;
+    gap: 30px;
 }
-
-.boxsua,
-.boxsua1,
-.boxsua2 {
+.boxsua , .boxsua1{
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
+.boxsua > input , .boxsua1 > input{
 
-.boxsua>input,
-.boxsua1>input,
-.boxsua2>input {
     height: 30px;
-    width: 230px;
+    width: 250px;
     border-radius: none;
     border: 1px solid black;
 }
-
-.boxsua>span,
-.boxsua1>span,
-.boxsua2>span {
+.boxsua > span , .boxsua1 > span{
     font-weight: 600;
 }
 </style>
@@ -119,54 +108,50 @@ include("before.php");
 
     <div class="frright">
         <div class="texttd">
-            <label>Sửa thông tin hồ sơ</label>
-            <span>Quản lý thông tin hồ sơ để bảo mật tài khoản</span>
+            <label>Sửa thông tin khuyến mãi</label>
         </div>
-
+    
 
         <div class="tabledh">
-            <div class="suama">
-             <div class="boxsua">
-                <span>Tên đăng nhập</span>
-                <input type="text" readonly />
-            </div>
-             </div>
-        <div class="suama1">
-            <div class="boxsua">
-                <span>Họ và tên</span>
-                <input type="text" />
+            <div class="suama1">
+                <div class="boxsua">
+                    <span>Mã khuyến mãi</span>
+                    <input type="text" readonly />
+                </div>
+
+                <div class="boxsua">
+                    <span>Phần trăm khuyến mãi</span>
+                    <input type="text"  />
+                </div>
             </div>
 
-            <div class="boxsua">
-                <span>Số điện thoại</span>
-                <input type="text" />
+            <div class="suama2">
+                <div class="boxsua1">
+                    <span>Ngày bắt đầu</span>
+                    <input type="date"/>
+                </div>
+
+                <div class="boxsua1">
+                    <span>Ngày kết thúc</span>
+                    <input type="date" />
+                </div>
             </div>
 
 
         </div>
 
-        <div class="suama2">
-            <div class="boxsua1">
-                <span>Địa chỉ</span>
-                <input type="text" />
-            </div>
+        <div class="btn"><button>Lưu thay đổi</button></div>
 
-            <div class="boxsua1">
-                <span>Email</span>
-                <input type="text" />
-            </div>
-        </div>
+
 
     </div>
 
-    <div class="btn"><button>Lưu thay đổi</button></div>
-
-
-
 </div>
-
-</div>
-
+<style>
+    .thongtinacc > :nth-child(6){
+    color:#19989e;
+    }
+</style>
 
 
 <?php

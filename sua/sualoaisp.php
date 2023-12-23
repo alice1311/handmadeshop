@@ -1,11 +1,43 @@
 <?php
-include("before.php")
+include("before.php");
 ?>
 
-
 <head>
-    <link rel="stylesheet" a href="quanly.css" />
+    <link rel="stylesheet" href="css/admin.css" />
 </head>
+
+<style>
+.tabledh {
+    margin-top: 30px;
+    gap: 25px;
+    height: 280px;
+    background-color: #F3F3F3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 15px;
+    justify-content: center;
+}
+.suama1{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.boxsua{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.boxsua > input{
+    height: 30px;
+    width: 250px;
+    border: 1px solid black;
+}
+.boxsua > span {
+    font-weight: 600;
+}
+</style>
+
 
 <div class="backgr">
 
@@ -22,52 +54,52 @@ include("before.php")
         </div>
 
         <div class="thongtinacc">
-        <a href="quanlytaikhoan.php" class="tab_tt">
-        <i class="fa-solid fa-users-gear"></i>
+            <a href="quanlytaikhoan.php" class="tab_tt">
+                <i class="fa-solid fa-users-gear"></i>
                 <span>Quản lý tài khoản</span>
             </a>
             <a href="quanlyloaisp.php" class="tab_tt">
-            <i class="fa-solid fa-sitemap"></i>
+                <i class="fa-solid fa-sitemap"></i>
                 <span>Quản lý loại sản phẩm</span>
             </a>
             <a href="quanlysp.php" class="tab_tt">
-            <i class="fa-solid fa-list"></i>
-                
+                <i class="fa-solid fa-list"></i>
+
                 <span>Quản lý sản phẩm</span>
             </a>
 
             <a href="quanlydonhang.php" class="tab_tt">
-            <i class="fa-solid fa-bag-shopping"></i>
+                <i class="fa-solid fa-bag-shopping"></i>
                 <span>Quản lý đơn hàng</span>
             </a>
 
             <a href="quanlyctietdon.php" class="tab_tt">
-            <i class="fa-solid fa-newspaper"></i>
+                <i class="fa-solid fa-newspaper"></i>
                 <span>Quản lý chi tiết đơn hàng</span>
             </a>
 
             <a href="quanlykhuyenmai.php" class="tab_tt">
-            <i class="fa-solid fa-ticket"></i>
+                <i class="fa-solid fa-ticket"></i>
                 <span>Quản lý khuyến mãi</span>
             </a>
-            
+
             <a href="quanlynv.php" class="tab_tt">
-            <i class="fa-solid fa-users"></i>
+                <i class="fa-solid fa-users"></i>
                 <span>Quản lý nhân viên</span>
             </a>
 
             <a href="quanlykhach.php" class="tab_tt">
-            <i class="fa-solid fa-user"></i>
+                <i class="fa-solid fa-user"></i>
                 <span>Quản lý khách hàng</span>
             </a>
 
             <a href="quanlydanhgia.php" class="tab_tt">
-            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
                 <span>Quản lý đánh giá</span>
             </a>
 
             <a href="quanlythanhtoan.php" class="tab_tt">
-            <i class="fa-solid fa-cash-register"></i>
+                <i class="fa-solid fa-cash-register"></i>
                 <span>Quản lý thanh toán</span>
             </a>
         </div>
@@ -75,36 +107,29 @@ include("before.php")
 
     <div class="frright">
         <div class="texttd">
-            <label>Thông tin đánh giá</label>
+            <label>Sửa thông tin loại sản phẩm</label>
         </div>
-        <div class="btnxoa">
-            <button>Xóa tất cả</button>
+    
+
+        <div class="tabledh">
+            <div class="suama1">
+                <div class="boxsua">
+                    <span>Mã loại sản phẩm</span>
+                    <input type="text" readonly/>
+                </div>
+
+                <div class="boxsua">
+                    <span>Tên loại sản phẩm</span>
+                    <input type="text" />
+</div>
+
+
+            </div>
+
+
         </div>
 
-        <div class="tths">
-            <table>
-                <tr>
-                    <th>Mã đánh giá</th>
-                    <th>Mã khách hàng</th>
-                    <th>Mã sản phẩm</th>
-                    <th>Chi tiết đánh giá</th>
-                    <th>Ngày đánh giá</th>
-                    <th>Độ hài lòng</th>
-                    <th>Ngày tạo</th>
-                    
-                </tr>
-                <tr>
-                   <td></td>
-                   <td></td>
-                   <td></td>
-                   <td></td>
-                   <td></td>
-                   <td></td>
-                   <td></td>
-                </tr>
-            </table>
-        </div>
-        <!-- <div class="btn"><button>Lưu hồ sơ</button></div> -->
+        <div class="btn"><button>Lưu thay đổi</button></div>
 
 
 
@@ -112,11 +137,12 @@ include("before.php")
 
 </div>
 <style>
-.thongtinacc > :nth-child(9){
+    .thongtinacc > :nth-child(2){
     color:#19989e;
-}
+    }
 </style>
 
+
 <?php
-include("after.php")
+include("after.php");
 ?>

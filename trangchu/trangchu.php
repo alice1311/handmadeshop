@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://kit.fontawesome.com/5c4aca786f.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="trangchu.css">
+    <link rel="stylesheet" href="css/trangchu.css">
 </head>
 
 <body>
@@ -57,7 +57,7 @@
                     <i class="fa-solid fa-arrow-right"></i>
                 </button>
             </div>
-            <img src="./cover.png" />
+            <img src="img/cover.png" />
         </div>
         <div class="bott">
             <div class="bott-khung">

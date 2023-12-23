@@ -3,7 +3,7 @@ include("before.php");
 ?>
 
 <head>
-    <link rel="stylesheet" href="admin.css" />
+    <link rel="stylesheet" href="css/admin.css" />
 </head>
 
 <style>
@@ -107,53 +107,39 @@ include("before.php");
 
     <div class="frright">
         <div class="texttd">
-            <label>Sửa thông tin sản phẩm</label>
+            <label>Sửa thông tin chi tiết đơn hàng</label>
         </div>
-    
-
+   
         <div class="tabledh">
             <div class="suama1">
                 <div class="boxsua">
                     <span>Mã sản phẩm</span>
-                    <input type="text" readonly />
+                    <input type="text"readonly />
                 </div>
 
                 <div class="boxsua">
-                    <span>Mã loại sản phẩm</span>
-                    <input type="text"  />
+                    <span>Mã đơn hàng</span>
+                    <input type="text"readonly />
                 </div>
-
-                <div class="boxsua">
-                    <span>Tên sản phẩm</span>
-                    <input type="text" />
-                </div>
-
-
             </div>
 
             <div class="suama2">
                 <div class="boxsua1">
-                    <span>Mô tả sản phẩm</span>
-                    <input type="text"/>
+                    <span>Số lượng</span>
+                    <input type="text" readonly />
                 </div>
 
                 <div class="boxsua1">
-                    <span>Hình ảnh</span>
-                    <input type="file" />
-                </div>
-            </div>
-
-            <div class="suama3">
-                <div class="boxsua2">
                     <span>Giá bán</span>
                     <input type="text"/>
                 </div>
 
-                <div class="boxsua2">
-                    <span>Tồn kho</span>
-                    <input type="text"/>
+                <div class="boxsua1">
+                    <span>Tổng tiền</span>
+                    <input type="text" />
                 </div>
             </div>
+
 
         </div>
 
@@ -166,7 +152,7 @@ include("before.php");
 </div>
 
 <style>
-    .thongtinacc > :nth-child(3){
+    .thongtinacc > :nth-child(5){
     color:#19989e;
     }
 </style>

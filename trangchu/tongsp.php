@@ -1,15 +1,18 @@
 <?php
-include("before.php")
+include("before.php");
 ?>
+
 <head>
-    <link rel="stylesheet" href="tongsp.css"/>
+<link rel ="stylesheet" href="css/tongsp.css"/>
 </head>
 
 
+<!-- Dòng sp1 -->
+
 <div class="tde">
-    <h2> CÀNH HOA LẺ</h2>
+    <h2> BÓ HOA LEN</h2>
 </div>
-<!-- dòng sp1 -->
+
 <div class="khungtong">
 
     <div class="khungsp">
@@ -18,7 +21,7 @@ include("before.php")
         </div>
         <div class="mota">
             <div class="khungchu">
-            <h2>Hoa lẻ</h2>
+                <h2>Bó hoa</h2>
                 <span>
                     Bó hoa ly ly 5 bông phối màu trắng tím siêu xinh
                 </span>
@@ -42,7 +45,7 @@ include("before.php")
         </div>
         <div class="mota">
             <div class="khungchu">
-            <h2>Hoa lẻ</h2>
+            <h2>Bó hoa</h2>
                 <span>
                     Bó hoa tốt nghiệp làm từ len mix, hoa len hình gấu đáng yêu
                 </span>
@@ -62,11 +65,13 @@ include("before.php")
 
     <div class="khungsp">
         <div class="sp">
+            <a href="chitietsp.php">
             <img src="img/a3.jpg" width="270px" height="280px">
+            </a>
         </div>
         <div class="mota">
             <div class="khungchu">
-            <h2>Hoa lẻ</h2>
+            <h2>Bó hoa</h2>
                 <span>
                     Bó hoa len handmade mix theo tone xanh
                 </span>
@@ -89,7 +94,7 @@ include("before.php")
         </div>
         <div class="mota">
             <div class="khungchu">
-            <h2>Hoa lẻ</h2>
+            <h2>Bó hoa</h2>
                 <span>
                     Bó hoa hồng len phối hồng trắng mix hoa cúc
                 </span>
@@ -106,22 +111,71 @@ include("before.php")
         </div>
     </div>
 </div>
-<!-- dòng sp2 -->
+<div class="xemtatca">
+<a href="bohoa.php">Xem tất cả</a>
+
+</div>
+<!-- Dòng sp2 -->
+<div class="tde"><h2> GIỎ HOA LEN</h2></div>
+
 <div class="khungtong">
-
     <div class="khungsp">
         <div class="sp">
-            <img src="img/a5.jpg" width="270px" height="280px">
+            <img src="img/b1.jpg" width="270px" height="280px">
         </div>
         <div class="mota">
             <div class="khungchu">
-            <h2>Hoa lẻ</h2>
+                <h2>Giỏ hoa</h2>
                 <span>
-                    Bó hoa ly ly 5 bông phối màu trắng tím siêu xinh
+                    Giỏ hoa len phối nhiều hoa tone trắng tím / hồng trắng
                 </span>
             </div>
             <div class="gia">
+                <label style="text-decoration: line-through; color:red">230.000đ</label>
+                <label style="color: #11998e; font-weight: bold;">180.000đ</label>
+            </div>
+            <div class="giohang">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <a>Thêm vào giỏ hàng</a>
+            </div>
+        </div>
+    </div>
 
+    <div class="khungsp">
+        <div class="sp">
+            <img src="img/b2.jpg" width="270px" height="280px">
+        </div>
+        <div class="mota">
+            <div class="khungchu">
+            <h2>Giỏ hoa</h2>
+                <span>
+                    Giỏ hoa mặt trời len phối hoa ly tone vàng trắng
+                </span>
+            </div>
+            <div class="gia">
+                <label style="text-decoration: line-through; color:red">230.000đ</label>
+                <label style="color: #11998e; font-weight: bold;">180.000đ</label>
+
+            </div>
+            <div class="giohang">
+
+                <i class="fa-solid fa-cart-shopping"></i>
+                <a>Thêm vào giỏ hàng</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="khungsp">
+        <div class="sp">
+            <img src="img/b3.jpg" width="270px" height="280px">
+        </div>
+        <div class="mota">
+            <div class="khungchu">
+            <h2>Giỏ hoa</h2>
+                <span>
+                   Giỏ hoa tone xanh trắng phối nhiều hoa, làm quà tặng ý nghĩa
+            </div>
+            <div class="gia">
                 <label style="text-decoration: line-through; color:red">230.000đ</label>
                 <label style="color: #11998e; font-weight: bold;">180.000đ</label>
 
@@ -135,65 +189,18 @@ include("before.php")
 
     <div class="khungsp">
         <div class="sp">
-            <img src="img/a6.jpg" width="270px" height="280px">
+            <img src="img/b4.jpg" width="270px" height="280px">
         </div>
         <div class="mota">
             <div class="khungchu">
-            <h2>Hoa lẻ</h2>
+            <h2>Giỏ hoa</h2>
                 <span>
-                    Bó hoa tốt nghiệp làm từ len mix, hoa len hình gấu đáng yêu
+                    Giỏ hoa bằng len làm quà tặng, trang trí phòng siêu xinh 
                 </span>
             </div>
             <div class="gia">
                 <label style="text-decoration: line-through; color:red">230.000đ</label>
                 <label style="color: #11998e; font-weight: bold;">180.000đ</label>
-
-            </div>
-            <div class="giohang">
-                <i class="fa-solid fa-cart-shopping"></i>
-                <a>Thêm vào giỏ hàng</a>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="khungsp">
-        <div class="sp">
-            <img src="img/a7.jpg" width="270px" height="280px">
-        </div>
-        <div class="mota">
-            <div class="khungchu">
-            <h2>Hoa lẻ</h2>
-                <span>
-                    Bó hoa len handmade mix theo tone xanh
-                </span>
-            </div>
-            <div class="gia">
-                <label style="text-decoration: line-through; color:red">290.000đ</label>
-                <label style="color: #11998e; font-weight: bold;">250.000đ</label>
-
-            </div>
-            <div class="giohang">
-                <i class="fa-solid fa-cart-shopping"></i>
-                <a>Thêm vào giỏ hàng</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="khungsp">
-        <div class="sp">
-            <img src="img/a8.jpg" width="270px" height="280px">
-        </div>
-        <div class="mota">
-            <div class="khungchu">
-            <h2>Hoa lẻ</h2>
-                <span>
-                    Bó hoa hồng len phối hồng trắng mix hoa cúc
-                </span>
-            </div>
-            <div class="gia">
-                <label style="text-decoration: line-through; color:red">220.000đ</label>
-                <label style="color: #11998e; font-weight: bold;">175.000đ</label>
 
             </div>
             <div class="giohang">
@@ -203,23 +210,47 @@ include("before.php")
         </div>
     </div>
 </div>
+<div class="xemtatca">
+    <a href="giohoa.php">Xem tất cả</a>
 
-<!-- dòng sp 3 -->
+</div>
+
+<!-- Dòng sp3 -->
+<div class="tde"><h2> CÀNH HOA LẺ</h2></div>
 <div class="khungtong">
+    <div class="khungsp">
+        <div class="sp">
+            <img src="img/c1.jpg" width="270px" height="280px">
+        </div>
+        <div class="mota">
+            <div class="khungchu">
+                <h2>Hoa lẻ</h2>
+                <span>
+                    Hoa đồng tiền size lớn, dùng làm quà tặng hoặc trang trí phòng
+                </span>
+            </div>
+            <div class="gia">
+                <label style="text-decoration: line-through; color:red">230.000đ</label>
+                <label style="color: #11998e; font-weight: bold;">180.000đ</label>
+            </div>
+            <div class="giohang">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <a>Thêm vào giỏ hàng</a>
+            </div>
+        </div>
+    </div>
 
     <div class="khungsp">
         <div class="sp">
-            <img src="img/a9.jpg" width="270px" height="280px">
+            <img src="img/c2.jpg" width="270px" height="280px">
         </div>
         <div class="mota">
             <div class="khungchu">
             <h2>Hoa lẻ</h2>
                 <span>
-                    Bó hoa ly ly 5 bông phối màu trắng tím siêu xinh
-                </span>
+                   Hoa len tulip cánh ghép tone màu hồng trắng siêu đẹp
             </div>
             <div class="gia">
-
                 <label style="text-decoration: line-through; color:red">230.000đ</label>
                 <label style="color: #11998e; font-weight: bold;">180.000đ</label>
 
@@ -233,13 +264,13 @@ include("before.php")
 
     <div class="khungsp">
         <div class="sp">
-            <img src="img/a10.jpg" width="270px" height="280px">
+            <img src="img/c3.jpg" width="270px" height="280px">
         </div>
         <div class="mota">
             <div class="khungchu">
             <h2>Hoa lẻ</h2>
                 <span>
-                    Bó hoa tốt nghiệp làm từ len mix, hoa len hình gấu đáng yêu
+                    Hoa hướng dương handmade size vừa
                 </span>
             </div>
             <div class="gia">
@@ -251,24 +282,23 @@ include("before.php")
                 <i class="fa-solid fa-cart-shopping"></i>
                 <a>Thêm vào giỏ hàng</a>
             </div>
-
         </div>
     </div>
 
     <div class="khungsp">
         <div class="sp">
-            <img src="img/a11.jpg" width="270px" height="280px">
+            <img src="img/c4.jpg" width="270px" height="280px">
         </div>
         <div class="mota">
             <div class="khungchu">
             <h2>Hoa lẻ</h2>
                 <span>
-                    Bó hoa len handmade mix theo tone xanh
+                    Lẻ cành hoa len 5 cánh mix hồng trắng
                 </span>
             </div>
             <div class="gia">
-                <label style="text-decoration: line-through; color:red">290.000đ</label>
-                <label style="color: #11998e; font-weight: bold;">250.000đ</label>
+                <label style="text-decoration: line-through; color:red">230.000đ</label>
+                <label style="color: #11998e; font-weight: bold;">180.000đ</label>
 
             </div>
             <div class="giohang">
@@ -277,33 +307,10 @@ include("before.php")
             </div>
         </div>
     </div>
-
-    <div class="khungsp">
-        <div class="sp">
-            <img src="img/a12.jpg" width="270px" height="280px">
-        </div>
-        <div class="mota">
-            <div class="khungchu">
-            <h2>Hoa lẻ</h2>
-                <span>
-                    Bó hoa hồng len phối hồng trắng mix hoa cúc
-                </span>
-            </div>
-            <div class="gia">
-                <label style="text-decoration: line-through; color:red">220.000đ</label>
-                <label style="color: #11998e; font-weight: bold;">175.000đ</label>
-
-            </div>
-            <div class="giohang">
-                <i class="fa-solid fa-cart-shopping"></i>
-                <a>Thêm vào giỏ hàng</a>
-            </div>
-        </div>
-    </div>
-   
-</div> 
-
-<div>Số trang</div>
+</div>
+<div class="xemtatca">
+<a href="hoale.php">Xem tất cả</a>
+</div>
 
 <?php
 include("after.php")

@@ -115,7 +115,7 @@ img {
             <hr>
         </div>
         <div class="abbrimg">
-            <img src="cover.png" />
+            <img src="img/cover.png" />
         </div>
         <div class="intro">
             <p>

@@ -99,7 +99,7 @@ include("before.php")
 
 <div class="container">
     <div class="container_img">
-        <img src="./cover.png" alt="" />
+        <img src="img/cover.png" alt="" />
     </div>
     <div class="right">
         <div class="dk">

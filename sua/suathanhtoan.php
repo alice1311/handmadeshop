@@ -3,7 +3,7 @@ include("before.php");
 ?>
 
 <head>
-    <link rel="stylesheet" href="admin.css" />
+    <link rel="stylesheet" href="css/admin.css" />
 </head>
 
 <style>
@@ -18,22 +18,24 @@ include("before.php");
     font-size: 15px;
     justify-content: center;
 }
-.suama1, .suama2, .suama3{
+.suama1{
     display: flex;
-    gap: 60px;
+    flex-direction: column;
+    gap: 30px;
 }
-.boxsua, .boxsua1, .boxsua2{
+.boxsua{
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-.boxsua > input, .boxsua1>input , .boxsua2>input{
+.boxsua > input{
+
     height: 30px;
-    width: 230px;
+    width: 250px;
     border-radius: none;
     border: 1px solid black;
 }
-.boxsua > span , .boxsua1 > span , .boxsua2>span{
+.boxsua > span {
     font-weight: 600;
 }
 </style>
@@ -107,58 +109,30 @@ include("before.php");
 
     <div class="frright">
         <div class="texttd">
-            <label>Sửa thông tin nhân viên</label>
+            <label>Sửa thông tin thanh toán</label>
         </div>
     
 
         <div class="tabledh">
             <div class="suama1">
                 <div class="boxsua">
-                    <span>Mã nhân viên</span>
+                    <span>Mã thanh toán</span>
                     <input type="text" readonly />
                 </div>
 
                 <div class="boxsua">
-                    <span>Họ tên</span>
+                    <span>Tên phương thức</span>
                     <input type="text"  />
                 </div>
 
                 <div class="boxsua">
-                    <span>Số diện thoại</span>
+                    <span>Chi tiết phương thức</span>
                     <input type="text" />
                 </div>
 
 
             </div>
 
-            <div class="suama2">
-                <div class="boxsua1">
-                    <span>Email</span>
-                    <input type="text"/>
-                </div>
-
-                <div class="boxsua1">
-                    <span>Địa chỉ</span>
-                    <input type="text" />
-                </div>
-
-                <div class="boxsua1">
-                    <span>CCCD/CMND</span>
-                    <input type="text" />
-                </div>
-            </div>
-
-            <div class="suama3">
-                <div class="boxsua2">
-                    <span>Tên tài khoản</span>
-                    <input type="text"/>
-                </div>
-
-                <div class="boxsua2">
-                    <span>Mật khẩu</span>
-                    <input type="text"/>
-                </div>
-            </div>
 
         </div>
 
@@ -171,7 +145,7 @@ include("before.php");
 </div>
 
 <style>
-    .thongtinacc > :nth-child(7){
+    .thongtinacc > :nth-child(10){
     color:#19989e;
     }
 </style>

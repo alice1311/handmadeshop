@@ -4,7 +4,7 @@ include("before.php")
 
 
 <head>
-    <link rel="stylesheet" a href="quanly.css" />
+    <link rel="stylesheet" a href="css/quanly.css" />
 </head>
 <div class="backgr">
 
@@ -74,7 +74,7 @@ include("before.php")
 
     <div class="frright">
         <div class="texttd">
-            <label>Thông tin khuyến mãi</label>
+            <label>Thông tin về phương thức thanh toán</label>
         </div>
         <div class="btnxoa">
             <button>Xóa tất cả</button>
@@ -83,19 +83,16 @@ include("before.php")
         <div class="tths">
             <table>
                 <tr>
-                    <th>Mã khuyến mãi</th>
-                    <th>Phần trăm</th>
-                    <th>Ngày bắt đầu</th>
-                    <th>Ngày kết thúc</th>
+                    <th>Mã phương thức</th>
+                    <th>Tên phương thức</th>
+                    <th>Chi tiết phương thức</th>
                     
                 </tr>
                 <tr>
                    <td></td>
                    <td></td>
                    <td></td>
-                   <td></td>
-                 
-                    <td><a href="suakm.php">Thay đổi</a></td>
+                    <td><a href="suathanhtoan.php">Thay đổi</a></td>
                 </tr>
             </table>
         </div>
@@ -106,12 +103,12 @@ include("before.php")
     </div>
 
 </div>
+
 <style>
-.thongtinacc > :nth-child(6){
+.thongtinacc > :nth-child(10){
     color:#19989e;
 }
 </style>
-
 <?php
 include("after.php")
 ?>
