@@ -3,7 +3,7 @@ include("before.php");
 ?>
 
 <head>
-<link rel ="stylesheet" href="tongsp.css"/>
+<link rel ="stylesheet" href="css/tongsp.css"/>
 </head>
 
 

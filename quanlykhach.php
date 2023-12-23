@@ -3,7 +3,7 @@ include("before.php")
 ?>
 
 <head>
-    <link rel="stylesheet" a href="quanly.css" />
+    <link rel="stylesheet" a href="css/quanly.css" />
 </head>
 </style>
 <div class="backgr">
