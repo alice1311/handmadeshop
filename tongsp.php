@@ -33,19 +33,48 @@ if (isset($_POST['loaiid'])) {
                 $tensp = substr($tensp, 0, 25) . '...';
             }
         }  
-        echo "<div class='khungsp'>
+        if($row["makm"] != null){
+            $sql_km="SELECT * FROM khuyenmai WHERE makm = '" .$row["makm"]. "'";
+            $kq_km = mysqli_query($conn, $sql_km) or die ("Không thể xuất thông tin khuyến mãi ".mysqli_error($conn));
+            while($row_km=mysqli_fetch_array($kq_km)){
+               $gia_km = $row["giaban"]- $row_km["phantramkm"] * $row["giaban"];
+               $gia_km = number_format($gia_km, 0, ',', '.') . 'đ';
+               $gia_goc = number_format($row["giaban"], 0, ',', '.') . 'đ';
+               $ptram = $row_km["phantramkm"] *100;
+            }
+            echo "<div class='khungsp'>
                 <div class='sp'>
-                     <img src=" . $row["hinhanh"] . " width='270px' height='280px'>
-                </div>
+                     <img src=" . $row["hinhanh"] . ">";
+                     if( $ptram != null){
+                         echo"<span>- " .$ptram. "%</span>";
+                     }
+            echo"</div>
                 <div class='mota'>
                      <div class='khungchu'>
                         <h2>" . $tenloai . "</h2>
                         <span>" . $tensp . "</span>
-                    </div>
-                    <div class='gia'>
-                        <label style='color: #11998e; font-weight: bold;'>" . $row["giaban"] . "</label>
-                    </div>
-                    <div class='giohang'>
+                    </div>";
+                        echo "<div class='gia'>
+                                <label style='text-decoration: line-through; color:red'>" .$gia_goc. "</label>
+                                <label style='color: #11998e; font-weight: bold;'>" . $gia_km . "</label>
+                             </div>";
+        }else{
+            echo "<div class='khungsp'>
+                <div class='sp'>
+                     <img src=" . $row["hinhanh"] . ">";
+            echo"</div>
+                <div class='mota'>
+                     <div class='khungchu'>
+                        <h2>" . $tenloai . "</h2>
+                        <span>" . $tensp . "</span>
+                    </div>";
+                $gia_goc = number_format($row["giaban"], 0, ',', '.') . 'đ';
+                echo "<div class='gia'>
+                        <label style='color: #11998e; font-weight: bold;'>" . $gia_goc . "</label>
+                    </div>";
+            }
+                   
+                    echo"<div class='giohang'>
                         <i class='fa-solid fa-cart-shopping'></i>
                         <a>Thêm vào giỏ hàng</a>
                     </div>
@@ -69,6 +98,7 @@ if (isset($_POST['loaiid'])) {
         $sql2 = "SELECT p.masp, p.tensp, p.makm, p.hinhanh, p.giaban, SUM(i.soluong) as total_sold FROM `sanpham` p JOIN chitietdonhang i ON p.masp = i.masp WHERE maloai= '" . $maloai . "' GROUP BY p.masp ORDER BY total_sold DESC LIMIT 4;";
         $kq2=mysqli_query($conn, $sql2) or die ("Không thể xuất thông tin sản phẩm ".mysqli_error($conn));    
         echo "<div class ='khungtong'>";
+
         while($row2=mysqli_fetch_array($kq2))
         {   $tensp = $row2["tensp"];
             if (strlen($tensp) > 25) {
@@ -79,24 +109,53 @@ if (isset($_POST['loaiid'])) {
                     $tensp = substr($tensp, 0, 25) . '...';
                 }
             }  
-            echo "<div class='khungsp'>";
-            echo"<div class='sp'>
-                    <img src=" . $row2["hinhanh"] . " width='270px' height='280px'>
-                </div>
-                <div class='mota'>
-                    <div class='khungchu'>
-                        <h2>" . $tenloai . "</h2>
-                        <span>" . $tensp . "</span>
-                    </div>
-                    <div class='gia'>
-                        <label style='color: #11998e; font-weight: bold;'>" . $row2["giaban"] . "</label>
-                    </div>
-                    <div class='giohang'>
+            if($row2["makm"] != null){
+                $sql_km="SELECT * FROM khuyenmai WHERE makm = '" .$row2["makm"]. "'";
+                $kq_km = mysqli_query($conn, $sql_km) or die ("Không thể xuất thông tin khuyến mãi ".mysqli_error($conn));
+                while($row_km=mysqli_fetch_array($kq_km)){
+                   $gia_km = $row2["giaban"]- $row_km["phantramkm"] * $row2["giaban"];
+                   $gia_km = number_format($gia_km, 0, ',', '.') . 'đ';
+                   $gia_goc = number_format($row2["giaban"], 0, ',', '.') . 'đ';
+                   $ptram = $row_km["phantramkm"] *100;
+                }
+                echo "<div class='khungsp'>
+                    <div class='sp'>
+                         <img src=" . $row2["hinhanh"] . ">";
+                         if( $ptram != null){
+                             echo"<span>- " .$ptram. "%</span>";
+                         }
+                echo"</div>
+                    <div class='mota'>
+                         <div class='khungchu'>
+                            <h2>" . $tenloai . "</h2>
+                            <span>" . $tensp . "</span>
+                        </div>";
+                            echo "<div class='gia'>
+                                    <label style='text-decoration: line-through; color:red'>" .$gia_goc. "</label>
+                                    <label style='color: #11998e; font-weight: bold;'>" . $gia_km . "</label>
+                                 </div>";
+            }else{
+                echo "<div class='khungsp'>
+                    <div class='sp'>
+                         <img src=" . $row2["hinhanh"] . ">";
+                echo"</div>
+                    <div class='mota'>
+                         <div class='khungchu'>
+                            <h2>" . $tenloai . "</h2>
+                            <span>" . $tensp . "</span>
+                        </div>";
+                    $gia_goc = number_format($row2["giaban"], 0, ',', '.') . 'đ';
+                    echo "<div class='gia'>
+                            <label style='color: #11998e; font-weight: bold;'>" . $gia_goc . "</label>
+                        </div>";
+                       
+                }
+                echo"<div class='giohang'>
                         <i class='fa-solid fa-cart-shopping'></i>
                         <a>Thêm vào giỏ hàng</a>
-                    </div>
-                </div>";
-            echo "</div>";
+                    </div>";
+                    echo "</div>";
+                    echo "</div>";
         }
         echo "</div>";
         echo "<div class='xemtatca'>";
