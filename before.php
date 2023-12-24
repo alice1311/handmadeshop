@@ -15,7 +15,11 @@
 </head>
 <?php 
     include("config.php");
-    $sql="SELECT * FROM loaisanpham;";
+    $sql="SELECT s.maloai, l.tenloai, COUNT(s.masp) as total_products
+    FROM sanpham s
+    JOIN loaisanpham l ON s.maloai = l.maloai
+    GROUP BY s.maloai, l.tenloai
+    HAVING COUNT(s.masp) > 0;";
     $kq=mysqli_query($conn,$sql) or die ("Không thể xuất thông tin ".mysqli_error());
 ?>
 <body>
