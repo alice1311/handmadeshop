@@ -14,17 +14,39 @@ include("config.php");
 if (isset($_POST['loaiid'])) {
     $id_loai =  $_POST['loaiid'];
     $sql_loai = "SELECT * FROM loaisanpham WHERE maloai = '" . $id_loai . "'";
-    $sql="SELECT * FROM sanpham WHERE maloai = '" . $id_loai . "'";
-    $kq = mysqli_query($conn, $sql) or die ("Không thể xuất thông tin sản phẩm ".mysqli_error($conn)); 
     $kq_loai = mysqli_query($conn, $sql_loai) or die ("Không thể xuất thông tin loại sản phẩm ".mysqli_error($conn));       
     while($row_loai=mysqli_fetch_array($kq_loai))
     {  
         echo "<div class='tde'><h2>" . $row_loai["tenloai"] . "</h2></div>";
         $tenloai = $row_loai["tenloai"]; 
     }
+    $sql_page = "SELECT count(*)as quantity FROM sanpham WHERE maloai = '" . $id_loai . "'";
+    $kq_page = mysqli_query($conn, $sql_page) or die ("Không thể xuất thông tin".mysqli_error($conn));
+    while($row_p=mysqli_fetch_array($kq_page))
+    {  
+        $quantity = $row_p["quantity"];
+    } 
+    $page_size = 8;
+    $page = 1;
+    if($quantity % $page_size == 0){
+        $page = $quantity / $page_size;
+    }else{
+        $page = (int)($quantity/$page_size) +1;
+    }
+
+    if((!isset($_POST['page'])) || ($_POST['page'] == '1' )){
+            $recordstart = 0;
+            $pagecurrent = 1;
+    }else{
+        $recordstart = ($_POST['page']-1) * $page_size;
+        $pagecurrent = $_POST['page'];
+    }
+    $sql="SELECT * FROM sanpham WHERE maloai = '" . $id_loai . "' limit {$recordstart}, {$page_size}";
+    $kq = mysqli_query($conn, $sql) or die ("Không thể xuất thông tin sản phẩm ".mysqli_error($conn)); 
     echo "<div class ='khungtong'>";
     while($row=mysqli_fetch_array($kq))
-    {   $tensp = $row["tensp"];
+    {   
+        $tensp = $row["tensp"];
         if (strlen($tensp) > 25) {
             $words = explode(' ', $tensp);
             if (count($words) >= 5) {
@@ -73,15 +95,78 @@ if (isset($_POST['loaiid'])) {
                         <label style='color: #11998e; font-weight: bold;'>" . $gia_goc . "</label>
                     </div>";
             }
-                   
-                    echo"<div class='giohang'>
+                    echo"<form action='chitietsp.php' id='myFom" . $row["masp"]. "' method='post'>
+                    <div class='giohang'>
+                        <input type='hidden' name='masp' value='" . $row["masp"] . "'>
                         <i class='fa-solid fa-cart-shopping'></i>
-                        <a>Thêm vào giỏ hàng</a>
+                        <a onclick='submitForm(\"myFom" . $row["masp"] . "\")'>Thêm vào giỏ hàng</a>
                     </div>
+                    </form>
                 </div>
             </div>";
         }
     echo "</div>";
+    echo "<div class = 'khungpagination'>";
+    if($page > 8){
+        for($i = 1; $i <= 3; $i++){
+        
+            if($pagecurrent == $i){
+                echo"<div class='pagination'>";
+                echo "<a>$i</a>";
+                echo" </div>";
+            }else{
+                echo "<form action='tongsp.php' id='myFor" . $id_loai . "' method='post'>";
+                echo "  <input type='hidden' name='loaiid' value='" . $id_loai . "'>
+                        <input type='hidden' name='page' value='".$i."'>
+                        <div class='pagination'>
+                        <a onclick='submitForm(\"myFor" . $id_loai . "\")'>$i</a>
+                        </div>
+                  </form>";
+                  
+            }
+        }
+         echo "  <div class='pagination'>
+                    <a onclick='submitForm(\"myFor" . $id_loai . "\")'>..</a>
+                </div>";
+        for($i=$page-2; $i <= $page; $i++){
+        
+            if($pagecurrent == $i){
+                echo"<div class='pagination'>";
+                echo "<a>$i</a>";
+                echo" </div>";
+            }else{
+                echo "<form action='tongsp.php' id='myFor" . $id_loai . "' method='post'>";
+                echo "  <input type='hidden' name='loaiid' value='" . $id_loai . "'>
+                        <input type='hidden' name='page' value='".$i."'>
+                        <div class='pagination'>
+                        <a onclick='submitForm(\"myFor" . $id_loai . "\")'>$i</a>
+                        </div>
+                  </form>";
+                  
+            }
+        }
+    }else{
+        for($i = 1; $i <= $page; $i++){
+        
+            if($pagecurrent == $i){
+                echo"<div class='pagination'>";
+                echo "<a>$i</a>";
+                echo" </div>";
+            }else{
+                echo "<form action='tongsp.php' id='myFor" . $id_loai . "' method='post'>";
+                echo "  <input type='hidden' name='loaiid' value='" . $id_loai . "'>
+                        <input type='hidden' name='page' value='".$i."'>
+                        <div class='pagination'>
+                        <a onclick='submitForm(\"myFor" . $id_loai . "\")'>$i</a>
+                        </div>
+                  </form>";
+                  
+            }
+        }
+    }
+    
+   
+    echo" </div>";
 
 } else {
     $sql="SELECT s.maloai, l.tenloai, COUNT(s.masp) as total_products
@@ -150,12 +235,16 @@ if (isset($_POST['loaiid'])) {
                         </div>";
                        
                 }
-                echo"<div class='giohang'>
+                echo"<form action='chitietsp.php' id='myFom" . $row2["masp"]. "' method='post'>
+                    <div class='giohang'>
+                        <input type='hidden' name='masp' value='" . $row2["masp"] . "'>
                         <i class='fa-solid fa-cart-shopping'></i>
-                        <a>Thêm vào giỏ hàng</a>
-                    </div>";
-                    echo "</div>";
-                    echo "</div>";
+                        <a onclick='submitForm(\"myFom" . $row2["masp"] . "\")'>Thêm vào giỏ hàng</a>
+                    </div>
+                    </form>
+                </div>
+            </div>";
+                    
         }
         echo "</div>";
         echo "<div class='xemtatca'>";
